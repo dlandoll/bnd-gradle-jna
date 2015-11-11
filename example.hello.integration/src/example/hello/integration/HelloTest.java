@@ -17,7 +17,7 @@ public class HelloTest extends TestCase {
 		ServiceAssert.assertServiceAvailable(HelloService.class, 1000);
 	}
 
-	public void testIppSession() throws Exception {
+	public void testHelloWorld() throws Exception {
 		HelloService service = ServiceUtils.getService(m_Context,
 				HelloService.class);
 		service.helloWorld();
