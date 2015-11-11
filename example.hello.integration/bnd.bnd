@@ -1,0 +1,40 @@
+Private-Package: example.hello.integration
+
+Test-Cases: ${classes;CONCRETE;EXTENDS;junit.framework.TestCase}
+
+-runee: JavaSE-1.8
+-runfw: org.apache.felix.framework
+-runvm: -ea
+-runsystempackages: \
+    com.sun.xml.internal.bind,\
+    sun.misc,\
+    sun.reflect
+-runtrace: true
+
+-buildpath: \
+	osgi.annotation; version=6.0.1,\
+	osgi.core; version=6.0,\
+	osgi.cmpn; version=6.0,\
+    org.knowhowlab.osgi.testing.assertions,\
+    org.knowhowlab.osgi.testing.utils,\
+    junit.osgi,\
+    org.assertj.core,\
+	example.hello.api
+
+-runbundles: \
+	org.apache.felix.gogo.command;version='[0.14.0,0.14.1)',\
+	org.apache.felix.gogo.runtime;version='[0.16.2,0.16.3)',\
+	org.apache.felix.gogo.shell;version='[0.10.0,0.10.1)',\
+	org.apache.felix.scr;version='[2.0.0,2.0.1)',\
+    biz.aQute.junit,\
+    org.knowhowlab.osgi.testing.assertions,\
+    org.knowhowlab.osgi.testing.utils,\
+    org.assertj.core,\
+	com.sun.jna;version='[4.2.1,4.2.2)',\
+	example.hello.api;version=snapshot,\
+	example.hello.service;version=snapshot
+
+-runproperties: \
+    tester.trace=true,\
+    tester.continuous=true,\
+    tester.dir=${target}/test-reports
